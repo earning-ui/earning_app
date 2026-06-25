@@ -1,0 +1,19 @@
+<h1>Investment Packages</h1>
+
+{% for package in packages %}
+
+<h3>{{ package.name }}</h3>
+
+<p>Price: Rs {{ package.price }}</p>
+
+<p>Daily Profit: Rs {{ package.daily_profit }}</p>
+
+<p>Duration: {{ package.duration_days }} Days</p>
+
+<a href="{% url 'buy_package' package.id %}">
+    Buy Package
+</a>
+
+<hr>
+
+{% endfor %}

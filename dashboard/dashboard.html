@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<h4>Wallet Balance</h4>
+
+<p>
+{{ request.user.wallet_balance }}
+</p>
+
+<h4>Your Investments</h4>
+
+<ul>
+
+{% for investment in investments %}
+
+<li>
+{{ investment.package.name }}
+-
+{{ investment.amount }}
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}

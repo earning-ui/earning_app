@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Withdraw Funds</title>
+</head>
+<body>
+
+<h1>Withdraw Funds</h1>
+
+<p>
+Wallet Balance:
+<strong>Rs. {{ request.user.wallet_balance }}</strong>
+</p>
+
+{% if error %}
+<p style="color:red;">
+    {{ error }}
+</p>
+{% endif %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Request Withdrawal
+    </button>
+
+</form>
+
+</body>
+</html>

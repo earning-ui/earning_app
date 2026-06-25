@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit</title>
+</head>
+<body>
+
+<h1>Deposit Funds</h1>
+
+<h3>Admin Accounts</h3>
+
+<p><strong>JazzCash:</strong> 03001234567</p>
+<p><strong>EasyPaisa:</strong> 03001234567</p>
+<p><strong>Bank:</strong> Meezan Bank - 1234567890</p>
+
+<hr>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Submit Deposit
+    </button>
+</form>
+
+</body>
+</html>
